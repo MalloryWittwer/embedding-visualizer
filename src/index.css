@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+html {
+  height: -webkit-fill-available;
+}
+
+.App {
+  background-color: #282c34;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.canvas-wrapper {
+  flex-grow: 1;
+}
+
+.side-pannel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  width: 25vw;
+}
+
+.dropdown-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 25px;
+  margin-top: 40px;
+}
+
+#canvas {
+  min-height: 100vh;
+  overflow: hidden;
+  width: 100%;
+  background-color: aliceblue;
+  position: relative;
+  cursor: grab;
+  touch-action: none;
+}
+
+.zoom-wrapper {
+  display: flex;
+  justify-content: center;
+  opacity: 0.9;
+}
+
+#credits {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  /* align-self: flex-end; */
+  color: aliceblue;
+  width: 0px;
+  height: 0px;
+  border-right: 40px solid transparent;
+  border-top: 40px solid transparent;
+  border-left: 40px solid #282c34;
+  border-bottom: 40px solid #282c34;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#github {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 15px;
+  right: 15px;
+}
+
+#predicted-image {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.img-fluid {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 5px solid red;
+  box-shadow: 0px 0px 5px black;
+}
+
+.explanation {
+  color: aliceblue;
+  opacity: 0.7;
+  padding: 0;
+  margin: 0;
+  font-size: 0.8rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-5px);
+  width: 100%;
+  text-align: center;
+}
+
+h3 {
+  color: aliceblue;
+  opacity: 0.9;
+  padding: 0;
+  margin: 5px;
+  font-weight: 400;
+  font-size: 1rem;
+}

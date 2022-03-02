@@ -1,0 +1,24 @@
+.range-container {
+  margin: 10px;
+  width: 300px;
+  color: aliceblue;
+  opacity: 0.9;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.range-container label {
+  min-width: 70px;
+}
+
+/* .range-container:hover {
+  opacity: 1;
+  transition: 0.3s;
+} */
+
+#selector {
+  flex-grow: 1;
+  margin-left: 5px;
+}
