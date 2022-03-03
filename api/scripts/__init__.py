@@ -1,1 +1,0 @@
-from .images import serve_image

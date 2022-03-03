@@ -28,7 +28,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start-api": "cd api && env/Scripts/activate && flask run --no-debugger"
+    "start-api": "venv/Scripts/activate && flask run --no-debugger"
   },
   "eslintConfig": {
     "extends": [
@@ -48,5 +48,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://embedding-visualizer.herokuapp.com"
+  "proxy": "http://localhost:5000/"
 }

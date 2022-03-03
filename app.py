@@ -1,12 +1,21 @@
-from audioop import cross
 import numpy as np
 from flask import Flask
 from flask.helpers import send_from_directory
 from flask_cors import CORS, cross_origin
-
 from PIL import Image
-from .scripts import serve_image
 from tensorflow.keras import models
+import io
+import base64
+
+
+def serve_image(pil_img):
+    img_io = io.BytesIO()
+    pil_img.save(img_io, 'jpeg', quality=100)
+    img_io.seek(0)
+    img = base64.b64encode(img_io.getvalue()).decode('ascii')
+    img_tag = f"data:image/jpg;base64,{img}"
+    return img_tag
+
 
 MNIST_DECODER = models.load_model('./models/mnist_decoder')
 FASHION_DECODER = models.load_model('./models/fashion-mnist_decoder')
