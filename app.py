@@ -46,7 +46,7 @@ def predict(dataset=None, x=None, y=None, z=None):
 
 
 @app.route('/', methods=['GET'])
-@cross_origin
+@cross_origin()
 def serve():
     return send_from_directory(app.static_folder, 'index.html')
 
