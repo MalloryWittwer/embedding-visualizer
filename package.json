@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "engines": {
     "yarn": "1.22.17",
-    "node": "16.13.0"
+    "node": "16.13.0",
+    "npm": "8.1.0"
   },
   "private": true,
   "dependencies": {
@@ -47,5 +48,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://embedding-visualizer.herokuapp.com/"
+  "proxy": "https://embedding-visualizer.herokuapp.com"
 }
