@@ -24,7 +24,7 @@ app = Flask(__name__, static_folder='build', static_url_path='') # embedding-vis
 CORS(app)
 
 
-@app.route('/predict/<dataset>/<x>/<y>/<z>')
+@app.route('/predict/<dataset>/<x>/<y>/<z>', methods=['GET'])
 @cross_origin()
 def predict(dataset=None, x=None, y=None, z=None):  
     
@@ -45,7 +45,7 @@ def predict(dataset=None, x=None, y=None, z=None):
     return image_tag
 
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 @cross_origin
 def serve():
     return send_from_directory(app.static_folder, 'index.html')
