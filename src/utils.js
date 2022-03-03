@@ -45,7 +45,7 @@ const invStereoProjection = (XY) => {
 const orthoProjection = (tp) => {
   let [t, p] = tp;
   const t0 = 0;
-  const tshifted = t - Math.PI / 2;
+  const tshifted = t + Math.PI / 2;
   const cosC =
     Math.sin(t0) * Math.sin(tshifted) +
     Math.cos(t0) * Math.cos(tshifted) * Math.cos(p);
@@ -124,30 +124,6 @@ const matrixRot = (matrix, vect) => {
   ];
   return rotatedVect;
 };
-
-// const reBase = (vect0, phiBase, thetaBase) => {
-//   const rotPhiBase = [
-//     [Math.cos(-phiBase), Math.sin(phiBase), 0],
-//     [Math.sin(-phiBase), Math.cos(-phiBase), 0],
-//     [0, 0, 1],
-//   ];
-//   const vect1 = matrixRot(rotPhiBase, vect0);
-
-//   const rotThetaBase = [
-//     [Math.cos(Math.PI - thetaBase), 0, Math.sin(Math.PI - thetaBase)],
-//     [0, 1, 0],
-//     [Math.sin(thetaBase - Math.PI), 0, Math.cos(Math.PI - thetaBase)],
-//   ];
-//   const vect2 = matrixRot(rotThetaBase, vect1);
-
-//   const rotPhiBaseInv = [
-//     [Math.cos(phiBase), Math.sin(-phiBase), 0],
-//     [Math.sin(phiBase), Math.cos(phiBase), 0],
-//     [0, 0, 1],
-//   ];
-//   const vect3 = matrixRot(rotPhiBaseInv, vect2);
-//   return vect3;
-// };
 
 const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
 

@@ -11,7 +11,6 @@ class Canvas extends Component {
 
   keyPressListener = (e) => {
     if (e.code === 'ControlLeft') {
-      console.log('BIP BIP');
       document.getElementById('canvas').style.cursor = 'crosshair';
     }
   };
@@ -21,13 +20,11 @@ class Canvas extends Component {
   }
 
   handleMouseEnter = (e) => {
-    console.log("mouse entered");
     document.addEventListener('keydown', this.keyPressListener);
     document.addEventListener('keyup', this.keyUpListener);
   };
 
   handleMouseLeave = (e) => {
-    console.log("mouse left");
     document.removeEventListener('keydown', this.keyPressListener);
     document.removeEventListener('keyup', this.keyUpListener);
   };
