@@ -3,7 +3,7 @@ from flask import Flask
 from flask.helpers import send_from_directory
 from flask_cors import CORS, cross_origin
 from PIL import Image
-# from tensorflow.keras import models
+from tensorflow.keras import models
 import io
 import base64
 
@@ -17,8 +17,8 @@ def serve_image(pil_img):
     return img_tag
 
 
-# MNIST_DECODER = models.load_model('./models/mnist_decoder')
-# FASHION_DECODER = models.load_model('./models/fashion-mnist_decoder')
+MNIST_DECODER = models.load_model('./models/mnist_decoder')
+FASHION_DECODER = models.load_model('./models/fashion-mnist_decoder')
 
 app = Flask(__name__, static_folder='build', static_url_path='') # embedding-visualizer/build
 CORS(app)
@@ -28,20 +28,20 @@ CORS(app)
 @cross_origin()
 def predict(dataset=None, x=None, y=None, z=None):  
     
-    image_tag = ''
+    # image_tag = ''
       
-    # xyz = np.array([float(x), float(y), float(z)])[np.newaxis]
+    xyz = np.array([float(x), float(y), float(z)])[np.newaxis]
     
-    # if dataset == 'mnist':
-    #     pred = MNIST_DECODER.predict(xyz)
-    # elif dataset == 'fashion-mnist':
-    #     pred = FASHION_DECODER.predict(xyz)
-    # else:
-    #     pred = np.zeros((32, 32))
+    if dataset == 'mnist':
+        pred = MNIST_DECODER.predict(xyz)
+    elif dataset == 'fashion-mnist':
+        pred = FASHION_DECODER.predict(xyz)
+    else:
+        pred = np.zeros((32, 32))
     
-    # im = (np.squeeze(pred) * 255).astype(np.uint8)
-    # im_pil = Image.fromarray(im).convert('RGB')   
-    # image_tag = serve_image(im_pil)
+    im = (np.squeeze(pred) * 255).astype(np.uint8)
+    im_pil = Image.fromarray(im).convert('RGB')   
+    image_tag = serve_image(im_pil)
     return image_tag
 
 
