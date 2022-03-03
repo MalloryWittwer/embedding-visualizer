@@ -312,7 +312,7 @@ class App extends Component {
 
         <div className="side-pannel">
           <p>
-            Read more about this project <a href="#">here</a>.
+            Read more about this project here.
           </p>
           <div className="dropdown-wrapper">
             <Dropdown
