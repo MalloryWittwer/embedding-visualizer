@@ -20,7 +20,7 @@ def serve_image(pil_img):
 MNIST_DECODER = models.load_model('./models/mnist_decoder')
 FASHION_DECODER = models.load_model('./models/fashion-mnist_decoder')
 
-app = Flask(__name__, static_folder='embedding-visualizer/build', static_url_path='')
+app = Flask(__name__, static_folder='build', static_url_path='') # embedding-visualizer/build
 CORS(app)
 
 
