@@ -31,14 +31,13 @@ html {
   justify-content: space-around;
   align-items: center;
   height: 100vh;
-  width: 25vw;
+  /* width: 25vw; */
 }
 
 .dropdown-wrapper {
   display: flex;
   flex-direction: column;
   margin: 10px 25px;
-  margin-top: 40px;
 }
 
 #canvas {
@@ -97,22 +96,39 @@ html {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  border: 5px solid red;
   box-shadow: 0px 0px 5px black;
+}
+
+.learn {
+  color: aliceblue;
+  opacity: 0.9;
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}
+
+.learn a {
+  color: aliceblue;
+  opacity: 0.9;
+}
+
+.learn a:hover {
+  opacity: 1;
 }
 
 .explanation {
   color: aliceblue;
   opacity: 0.7;
-  padding: 0;
+  padding: 5px;
   margin: 0;
   font-size: 0.8rem;
-  position: absolute;
+  text-align: center;
+  /* position: absolute;
   top: 50%;
   transform: translateY(-50%);
   transform: translateX(-5px);
   width: 100%;
-  text-align: center;
+  text-align: center; */
 }
 
 h3 {
@@ -122,4 +138,13 @@ h3 {
   margin: 5px;
   font-weight: 400;
   font-size: 1rem;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #434C56;
+  border-radius: 2px;
 }

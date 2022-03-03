@@ -7,7 +7,7 @@ const customStyles = {
     ...provided,
     borderBottom: "1px solid aliceblue",
     color: "aliceblue",
-    background: state.isFocused ? "black" : "none",
+    background: state.isFocused ? "#434C56" : "none",
   }),
 
   indicatorsContainer: (provided) => ({
@@ -36,6 +36,8 @@ const customStyles = {
     background: "black",
     width: 200,
   }),
+
+  menuPortal: base => ({ ...base, zIndex: 9999 }),
 };
 
 class Dropdown extends Component {
@@ -54,6 +56,7 @@ class Dropdown extends Component {
           id="selector"
           name="selector"
           defaultValue={this.props.defaultValue}
+          menuPortalTarget={document.body} 
         />
       </div>
     );

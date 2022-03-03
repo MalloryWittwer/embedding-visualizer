@@ -16,14 +16,14 @@ class App extends Component {
         { value: "fashion-mnist", label: "Fashion-MNIST" },
       ],
       dataset: "mnist",
-      zoom: 600,
-      pointSize: 30,
+      zoom: 300,
+      pointSize: 18,
       projectionOptions: [
-        { value: "stereo", label: "Stereographic" },
         { value: "ortho", label: "Orthographic" },
+        { value: "stereo", label: "Stereographic" },
         { value: "cylindre", label: "Cylindrical" },
       ],
-      projection: "stereo",
+      projection: "ortho",
       baseMatrixR: [
         [1, 0, 0],
         [0, 1, 0],
@@ -311,8 +311,15 @@ class App extends Component {
         </div>
 
         <div className="side-pannel">
-          <p>
-            Read more about this project here.
+          <p className="learn">
+            Learn more about this project{" "}
+            <a
+              href="https://github.com/MalloryWittwer/embedding-visualizer"
+              target="_blank"
+            >
+              here
+            </a>
+            .
           </p>
           <div className="dropdown-wrapper">
             <Dropdown
@@ -325,7 +332,7 @@ class App extends Component {
               label={"Projection"}
               options={projectionOptions}
               actionFnct={this.switchProjection}
-              defaultValue={{ value: "stereo", label: "Stereographic" }}
+              defaultValue={{ value: "ortho", label: "Orthographic" }}
             />
             <div className="zoom-wrapper">
               <Slider
@@ -337,7 +344,7 @@ class App extends Component {
                 min={10}
                 max={2000}
                 step={10}
-                default={600}
+                default={300}
               />
             </div>
           </div>

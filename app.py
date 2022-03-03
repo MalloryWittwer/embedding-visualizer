@@ -26,10 +26,7 @@ CORS(app)
 
 @app.route('/predict/<dataset>/<x>/<y>/<z>', methods=['GET'])
 @cross_origin()
-def predict(dataset=None, x=None, y=None, z=None):  
-    
-    # image_tag = ''
-      
+def predict(dataset=None, x=None, y=None, z=None):        
     xyz = np.array([float(x), float(y), float(z)])[np.newaxis]
     
     if dataset == 'mnist':

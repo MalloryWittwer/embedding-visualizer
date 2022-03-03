@@ -8,8 +8,11 @@
   height: 350px;
   overflow: auto;
   background: #16181b;
+
   display: flex;
   flex-wrap: wrap;
+  align-content: flex-start;
+
   padding: 5px;
   border-radius: 5px;
   border: 1px solid aliceblue;

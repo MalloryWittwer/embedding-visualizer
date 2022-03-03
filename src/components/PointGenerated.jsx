@@ -4,6 +4,7 @@ import React, { Component } from "react";
 class PointGenerated extends Component {
   render = () => {
     const { yPos, xPos, size, innerHTML } = this.props;
+    const borderWidth = Math.max(2, size * 0.1);
     let hideClass;
     if (innerHTML===undefined) {
         hideClass = 'hidden';
@@ -22,7 +23,7 @@ class PointGenerated extends Component {
           fontSize: `${0.5 * size}px`,
         }}
       >
-          <img src={innerHTML} alt="prediction" className='img-fluid' />
+          <img src={innerHTML} alt="prediction" className='img-fluid' style={{border: `${borderWidth}px solid #edbd00`}} />
       </div>
     );
   };

@@ -8,12 +8,12 @@ class PredictionsList extends Component {
     const { predictions } = this.props;
     return (
       <div className="predictions-list-wrapper">
-        <h3>Generated data</h3>
-        <div className="predictions-list">
+        {/* <h3>Generated data</h3> */}
           <p className="explanation">
             Use <strong>Ctrl + Click</strong> to generate new data on the
             canvas.
           </p>
+        <div className="predictions-list">
           {predictions.map((pred) => {
             const { innerHTML, id } = pred;
             return <Prediction innerHTML={innerHTML} key={id} />;

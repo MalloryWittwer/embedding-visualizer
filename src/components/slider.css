@@ -26,10 +26,6 @@ input[type="range"] {
   outline: none;
 }
 
-/* input[type="range"]:hover {
-  opacity: 1;
-} */
-
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -39,8 +35,3 @@ input[type="range"]::-webkit-slider-thumb {
   border-radius: 5px;
   cursor: pointer;
 }
-
-/* .discret {
-  opacity: 0.5;
-  transition: 1s;
-} */

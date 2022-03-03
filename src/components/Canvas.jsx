@@ -9,6 +9,29 @@ class Canvas extends Component {
     this.state = { activeID: 0 };
   }
 
+  keyPressListener = (e) => {
+    if (e.code === 'ControlLeft') {
+      console.log('BIP BIP');
+      document.getElementById('canvas').style.cursor = 'crosshair';
+    }
+  };
+
+  keyUpListener = (e) => {
+    document.getElementById('canvas').style.cursor = 'grab';
+  }
+
+  handleMouseEnter = (e) => {
+    console.log("mouse entered");
+    document.addEventListener('keydown', this.keyPressListener);
+    document.addEventListener('keyup', this.keyUpListener);
+  };
+
+  handleMouseLeave = (e) => {
+    console.log("mouse left");
+    document.removeEventListener('keydown', this.keyPressListener);
+    document.removeEventListener('keyup', this.keyUpListener);
+  };
+
   centerOnID = (activeID) => {
     this.setState({ activeID });
   };
@@ -20,7 +43,11 @@ class Canvas extends Component {
     if (children) {
       const { xPosGenerated, yPosGenerated } = generatedChild;
       return (
-        <div id="canvas">
+        <div 
+          id="canvas"
+          onMouseEnter={this.handleMouseEnter}
+          onMouseLeave={this.handleMouseLeave}
+        >
           {children.map((child) => {
             const { id, posX, posY, zIndex } = child;
             return (

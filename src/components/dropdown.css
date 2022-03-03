@@ -13,11 +13,6 @@
   min-width: 70px;
 }
 
-/* .range-container:hover {
-  opacity: 1;
-  transition: 0.3s;
-} */
-
 #selector {
   flex-grow: 1;
   margin-left: 5px;
