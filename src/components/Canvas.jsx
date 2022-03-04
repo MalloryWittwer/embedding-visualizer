@@ -67,7 +67,6 @@ class Canvas extends Component {
             yPos={yPosGenerated}
             size={pointSize}
           />
-          ;
         </div>
       );
     } else {
