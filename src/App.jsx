@@ -48,6 +48,16 @@ class App extends Component {
   switchDataset = (dataset) => {
     const point = document.getElementById("point-generated");
     point.classList.add("hidden");
+
+    this.setState({
+      tpg: [0, 0],
+      baseMatrixR: [
+        [1, 0, 0],
+        [0, 1, 0],
+        [0, 0, 1],
+      ],
+    });
+
     this.setState({ dataset }, this.fetchDataSet);
   };
 
@@ -171,12 +181,15 @@ class App extends Component {
       micro.classList.add("invisible");
 
       const xyz = this.getXYZ(e.clientX, e.clientY);
+
       if (ut.arraysEqual(xyz, xyzOrigin)) {
         return;
       }
+
       const cvNormed = ut.crossVectorNormed(xyzOrigin, xyz);
       const angle = ut.angleBetweenVectors(xyz, xyzOrigin);
       const matrixR = rotationMatrix(angle, cvNormed);
+      const newBaseMatrixR = ut.matrixMul(matrixR, baseMatrixR);
 
       const newData = {};
       for (const [id, tp] of Object.entries(data)) {
@@ -188,8 +201,6 @@ class App extends Component {
       const newTpGenerated = ut.cart2spher(
         ut.matrixRot(matrixR, ut.spher2cart(tpg))
       );
-
-      const newBaseMatrixR = ut.matrixMul(baseMatrixR, matrixR);
 
       this.setState(
         {
@@ -204,24 +215,13 @@ class App extends Component {
     }
   };
 
-  downListener = (e) => {
-    if (window.event.ctrlKey) {
-      this.createNewPoint(e);
-    }
-    if (this.state.zooming) {
-      return;
-    }
-    document.getElementById("canvas").style.cursor = "grabbing";
-    const xyz = this.getXYZ(e.clientX, e.clientY);
-    this.setState({ moving: true, xyzOrigin: xyz });
-  };
-
   createNewPoint = (e) => {
     const { baseMatrixR, dataset } = this.state;
     const xyz = this.getXYZ(e.clientX, e.clientY);
     const tpg = ut.cart2spher(xyz);
     const baseInverseRot = ut.matrixInv(baseMatrixR);
     const [x, y, z] = ut.matrixRot(baseInverseRot, xyz);
+
     fetch(`/predict/${dataset}/${x}/${y}/${z}`)
       .then((r) => r.text())
       .then((imageTag) => {
@@ -238,6 +238,18 @@ class App extends Component {
         const point = document.getElementById("point-generated");
         point.classList.remove("hidden");
       });
+  };
+
+  downListener = (e) => {
+    if (window.event.ctrlKey) {
+      this.createNewPoint(e);
+    }
+    if (this.state.zooming) {
+      return;
+    }
+    document.getElementById("canvas").style.cursor = "grabbing";
+    const xyz = this.getXYZ(e.clientX, e.clientY);
+    this.setState({ moving: true, xyzOrigin: xyz });
   };
 
   upListener = (e) => {
