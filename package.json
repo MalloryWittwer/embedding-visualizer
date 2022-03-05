@@ -48,5 +48,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://embedding-visualizer.herokuapp.com/"
+  "proxy": "http://localhost:5000/"
 }

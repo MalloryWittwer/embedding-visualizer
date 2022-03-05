@@ -22,7 +22,7 @@ html {
 }
 
 .canvas-wrapper {
-  flex-grow: 1;
+  width: 100%;
 }
 
 .side-pannel {
@@ -31,7 +31,6 @@ html {
   justify-content: space-around;
   align-items: center;
   height: 100vh;
-  /* width: 25vw; */
 }
 
 .dropdown-wrapper {
@@ -41,7 +40,7 @@ html {
 }
 
 #canvas {
-  min-height: 100vh;
+  height: 100vh;
   overflow: hidden;
   width: 100%;
   background-color: aliceblue;
@@ -60,7 +59,6 @@ html {
   position: absolute;
   bottom: 0;
   left: 0;
-  /* align-self: flex-end; */
   color: aliceblue;
   width: 0px;
   height: 0px;
@@ -123,12 +121,6 @@ html {
   margin: 0;
   font-size: 0.8rem;
   text-align: center;
-  /* position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  transform: translateX(-5px);
-  width: 100%;
-  text-align: center; */
 }
 
 h3 {
@@ -147,4 +139,10 @@ h3 {
 ::-webkit-scrollbar-thumb {
   background: #434C56;
   border-radius: 2px;
+}
+
+@media screen and (max-width: 768px) {
+  .App {
+    flex-direction: column;
+  }
 }
