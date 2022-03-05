@@ -30,7 +30,8 @@ html {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 100vh;
+
+  /* height: 100vh; */
 }
 
 .dropdown-wrapper {
@@ -41,6 +42,7 @@ html {
 
 #canvas {
   height: 100vh;
+
   overflow: hidden;
   width: 100%;
   background-color: aliceblue;
@@ -144,5 +146,35 @@ h3 {
 @media screen and (max-width: 768px) {
   .App {
     flex-direction: column;
+  }
+
+  #canvas {
+    height: 60vh;
+  }
+
+  .predictions-list-wrapper {
+    display: none;
+  }
+
+  .side-pannel {
+    height: 40vh;
+  }
+
+  .dropdown-wrapper {
+    order: 0;
+  }
+
+  .learn {
+    order: 1;
+    margin-top: 0;
+  }
+
+  .zoom-wrapper {
+    order: 0;
+    margin-bottom: 10px;
+  }
+
+  .range-container {
+    order: 1;
   }
 }

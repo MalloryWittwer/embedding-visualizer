@@ -8,7 +8,6 @@ class PredictionsList extends Component {
     const { predictions } = this.props;
     return (
       <div className="predictions-list-wrapper">
-        {/* <h3>Generated data</h3> */}
           <p className="explanation">
             Use <strong>Ctrl + Click</strong> to generate new data on the
             canvas.
