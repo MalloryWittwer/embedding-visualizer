@@ -1,6 +1,6 @@
 {
   "short_name": "Embedding visualizer",
-  "name": "Create microstructure explorer app",
+  "name": "Create VAE explorer app",
   "icons": [
     {
       "src": "favicon.ico",
