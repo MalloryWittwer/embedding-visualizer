@@ -9,6 +9,7 @@ Try the app at [https://embedding-visualizer.herokuapp.com/](https://embedding-v
 [Variational autoencoders](https://en.wikipedia.org/wiki/Variational_autoencoder) or VAE are neural networks that attempt to compress the input data into a low-dimensional latent space (encoding) and then reconstruct it as accurately as possible (decoding). Once the model is trained, new data can be generated from the latent space by the decoder model. Here, we have constrained the latent space to lie on the surface of a (three-dimensional) unit sphere. Therefore, the latent space is [closed](https://en.wikipedia.org/wiki/Surface_(topology)#Closed_surfaces); it is compact, without any boundaries. Introducing this constraint facilitates viewing and navigating the latent space in the web app.
 
 ⏬ Below are the loss decrease, some examples of input-reconstruction pairs in MNIST, and the evolution of the spherical latent space of the VAE over 60 epochs (colors = MNIST labels):
+
 ![animation](https://github.com/MalloryWittwer/embedding-visualizer/blob/master/screenshots/anim_autoencoder.gif?raw=true)
 
 #### Exploring the latent space in a web app
