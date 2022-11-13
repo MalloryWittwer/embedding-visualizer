@@ -2,7 +2,7 @@
 
 ![screenshot](https://github.com/MalloryWittwer/embedding-visualizer/blob/master/screenshots/screenshot.png?raw=true)
 
-Try the app at [https://embedding-visualizer.herokuapp.com/](https://embedding-visualizer.herokuapp.com/) (it will take about 20 seconds to load). This application is a tool to explore and interact with the latent space of a variational autoencoder (VAE) in an intuitive and user-friendly way. Users can "navigate" through the latent space by grabbing and panning the canvas, and generate new points at desired locations. This is made possible by constraining the latent space of the VAE to a unit sphere, which is projected onto the canvas using the orthographic, stereographic, or cylindrical sphere projection. The MNIST and Fashion-MNIST datasets are shown as examples, however, the technique could be applied or adapted to any other dataset.
+This application is a tool to explore and interact with the latent space of a variational autoencoder (VAE) in an intuitive and user-friendly way. Users can "navigate" through the latent space by grabbing and panning the canvas, and generate new points at desired locations. This is made possible by constraining the latent space of the VAE to a unit sphere, which is projected onto the canvas using the orthographic, stereographic, or cylindrical sphere projection. The MNIST and Fashion-MNIST datasets are shown as examples, however, the technique could be applied or adapted to any other dataset.
 
 #### Training a VAE with a spherical latent space
 
